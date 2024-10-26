@@ -1,11 +1,18 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {createStackNavigator} from '@react-navigation/stack';
+import HomeScreen from './src/screens/home/home';
+
+const Stack = createStackNavigator();
 
 const AppInner = (): React.JSX.Element => {
   return (
-    <View>
-      <Text>sss</Text>
-    </View>
+    <Stack.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Stack.Screen name="Home" component={HomeScreen} />
+    </Stack.Navigator>
   );
 };
 
